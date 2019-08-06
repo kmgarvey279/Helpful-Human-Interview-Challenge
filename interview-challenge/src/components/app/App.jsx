@@ -12,6 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       selectedColor: null,
+      selectedCategory: null,
       colorList: [
          {
            category: 'green',
@@ -48,11 +49,16 @@ class App extends React.Component {
       ]
     };
     this.changeSelectedColor = this.changeSelectedColor.bind(this);
+    this.changeSelectedCategory = this.changeSelectedCategory.bind(this);
     this.getRandom = this.getRandom.bind(this);
   }
   
   changeSelectedColor(hex){
     this.setState({selectedColor: hex});
+  }
+  
+  changeSelectedCategory(category){
+    this.setState({selectedCategory: category});
   }
   
   getRandom(){
@@ -65,7 +71,8 @@ class App extends React.Component {
       <div>
         <Router>
           <Header/>
-          <Sidebar colorSelect={this.changeSelectedColor} 
+          <Sidebar colorSelect={this.changeSelectedColor}
+          categorySelect={this.changeSelectedCategory} 
           colorList={this.state.colorList}
           getRandom={this.getRandom}/>
           <Route path='/' render={(props)=><ColorList colorList={this.state.colorList}
