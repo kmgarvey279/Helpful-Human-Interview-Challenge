@@ -1,7 +1,7 @@
 import React from 'react';
-import ColorList from './ColorList';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import ColorList from '../color-list/ColorList';
+import Header from '../header/Header';
+import Sidebar from '../sidebar/Sidebar';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -13,15 +13,18 @@ class App extends React.Component {
       colorList: [
          {
            category: 'green',
-           hex: '#275d06' 
+           hex: '#275d06',
+           style: {backgroundColor: '#275d06'} 
          },
          {
            category: 'blue',
-           hex: '#6495ed'
+           hex: '#6495ed',
+           style: {backgroundColor: '#6495ed'} 
          },
          {
            category: 'red',
-           hex: '#8b0000'
+           hex: '#8b0000',
+           style: {backgroundColor: '#8b0000'} 
          }
       ]
     };
