@@ -1,5 +1,20 @@
 div#palette {
   display: block;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+  border: 2px solid lightgray;
+  border-radius: 10px 10px 0 0;
 }
+
+div#label {
+  border: 2px solid lightgray;
+  border-radius: 0 0 10px 10px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+p {
+  padding-left: 10px;
+}
+
+

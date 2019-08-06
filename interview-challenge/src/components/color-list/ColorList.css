@@ -1,0 +1,6 @@
+div#wrap {
+  columns: 4 auto;
+  column-width: 200px;
+  break-inside: avoid-column;
+  margin-top: 70px;
+}

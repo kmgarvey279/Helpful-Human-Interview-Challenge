@@ -1,11 +1,12 @@
 import React from "react";
 import Color from "../color/Color";
 import PropTypes from "prop-types";
+import './ColorList.css'
 
 function ColorList(props) {
   
   return (
-    <div>
+    <div id='wrap'>
       {props.colorList.map((color) =>
         <Color category={color.category}
             hex={color.hex}

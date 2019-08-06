@@ -14,18 +14,35 @@ class App extends React.Component {
          {
            category: 'green',
            hex: '#275d06',
-           style: {backgroundColor: '#275d06'} 
          },
          {
            category: 'blue',
            hex: '#6495ed',
-           style: {backgroundColor: '#6495ed'} 
          },
          {
            category: 'red',
            hex: '#8b0000',
-           style: {backgroundColor: '#8b0000'} 
-         }
+         },
+         {
+           category: 'purple',
+           hex: '#8b0000',
+         },
+         {
+           category: 'brown',
+           hex: '#a0522d',
+         },
+         {
+           category: 'gray',
+           hex: '#778899',
+         },
+         {
+           category: 'orange',
+           hex: '#ff4500',
+         },
+         {
+           category: 'yellow',
+           hex: '#ffd700',
+         },
       ]
     };
   }

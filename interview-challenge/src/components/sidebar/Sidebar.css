@@ -1,0 +1,24 @@
+div#sidebar {
+height: 600px;
+width: 20%;
+float:left;
+background-color: lightgray;
+border: solid gray 2px;
+margin-right: 20px;
+}
+
+div#colors {
+  margin-left: 25px;
+}
+
+button {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 190px;
+  border: solid black 1px;
+  background-color: white;
+  border-radius: 7px 7px 7px 7px;
+}
