@@ -1,5 +1,6 @@
 import React from "react";
 import Color from "../color/Color";
+import ColorDetail from '../color-detail/ColorDetail';
 import PropTypes from "prop-types";
 import './ColorList.css'
 
@@ -18,7 +19,7 @@ function ColorList(props) {
   } else {
     return (
       <div>
-        {props.selectedColor}
+        <ColorDetail selectedColor={props.selectedColor} colorList={props.colorList}/>
       </div>
     )
   }

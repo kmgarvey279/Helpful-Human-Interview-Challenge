@@ -1,0 +1,20 @@
+div#filteredPalette {
+  display: block;
+  height: 75px;
+  width: 130px;
+  border: 2px solid lightgray;
+  border-radius: 10px 10px 0 0;
+    break-inside: avoid-column;
+}
+
+div#filteredLabel {
+  border: 2px solid lightgray;
+  border-radius: 0 0 10px 10px;
+  width: 130px;
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+}
+
+p {
+  padding-left: 5px;
+}
