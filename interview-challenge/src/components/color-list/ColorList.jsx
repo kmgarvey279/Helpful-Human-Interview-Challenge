@@ -19,7 +19,8 @@ function ColorList(props) {
   } else {
     return (
       <div>
-        <ColorDetail selectedColor={props.selectedColor} colorList={props.colorList}/>
+        <ColorDetail selectedColor={props.selectedColor} 
+        colorList={props.colorList}/>
       </div>
     )
   }
