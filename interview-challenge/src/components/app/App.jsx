@@ -2,14 +2,16 @@ import React from 'react';
 import ColorList from '../color-list/ColorList';
 import Header from '../header/Header';
 import Sidebar from '../sidebar/Sidebar';
+import ColorDetail from '../color-detail/ColorDetail';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
 
 class App extends React.Component {
   
   constructor(props){
     super(props);
     this.state = {
+      selectedColor: null,
       colorList: [
          {
            category: 'green',
@@ -25,7 +27,7 @@ class App extends React.Component {
          },
          {
            category: 'purple',
-           hex: '#8b0000',
+           hex: '#9400d3',
          },
          {
            category: 'brown',
@@ -45,6 +47,11 @@ class App extends React.Component {
          },
       ]
     };
+    this.changeSelectedColor = this.changeSelectedColor.bind(this);
+  }
+  
+  changeSelectedColor(hex){
+    this.setState({selectedColor: hex});
   }
   
   render() {  
@@ -53,7 +60,14 @@ class App extends React.Component {
         <Router>
           <Header/>
           <Sidebar/>
-          <Route path='/' render={()=><ColorList colorList={this.state.colorList} />} />
+          <Route path='/' render={(props)=><ColorList colorList={this.state.colorList}
+          currentRouterpath={props.location.pathname}
+          selectedColor={this.state.selectedColor}
+          colorSelect={this.changeSelectedColor}/>} />
+          <Route path='/details' render={(props)=><ColorDetail colorList={this.state.colorList}
+          currentRouterpath={props.location.pathname}
+          selectedColor={props.selectedColor}
+          colorSelect={this.changeSelectedColor}/>} />
         </Router>
       </div>
     );

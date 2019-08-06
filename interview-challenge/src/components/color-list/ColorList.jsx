@@ -4,20 +4,30 @@ import PropTypes from "prop-types";
 import './ColorList.css'
 
 function ColorList(props) {
-  
-  return (
-    <div id='wrap'>
-      {props.colorList.map((color) =>
-        <Color category={color.category}
-            hex={color.hex}
-            style={color.style}/>
-      )}
-    </div>
-  );
+  if (props.selectedColor == null) {
+    return (
+      <div id='wrap'>
+        {props.colorList.map((color) =>
+          <Color category={color.category}
+              hex={color.hex}
+              style={color.style}
+              colorSelect={props.colorSelect}/>
+        )}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {props.selectedColor}
+      </div>
+    )
+  }
 }
 
 ColorList.propTypes = {
-  colorList: PropTypes.array
+  colorList: PropTypes.array,
+  colorSelect: PropTypes.func,
+  selectedColor: PropTypes.string
 };
 
 export default ColorList;
