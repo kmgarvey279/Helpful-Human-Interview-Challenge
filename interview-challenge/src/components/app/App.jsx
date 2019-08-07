@@ -5,6 +5,7 @@ import Sidebar from '../sidebar/Sidebar';
 import ColorDetail from '../color-detail/ColorDetail';
 import './App.css';
 import { BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
+import colorList from '../../masterColorList.jsx'
 
 class App extends React.Component {
   
@@ -13,43 +14,11 @@ class App extends React.Component {
     this.state = {
       selectedColor: null,
       selectedCategory: null,
-      colorList: [
-         {
-           category: 'green',
-           hex: '#275d06',
-         },
-         {
-           category: 'blue',
-           hex: '#6495ed',
-         },
-         {
-           category: 'red',
-           hex: '#8b0000',
-         },
-         {
-           category: 'purple',
-           hex: '#9400d3',
-         },
-         {
-           category: 'brown',
-           hex: '#a0522d',
-         },
-         {
-           category: 'gray',
-           hex: '#778899',
-         },
-         {
-           category: 'orange',
-           hex: '#ff4500',
-         },
-         {
-           category: 'yellow',
-           hex: '#ffd700',
-         },
-      ]
-    };
+      currentPage: 1
+    }
     this.changeSelectedColor = this.changeSelectedColor.bind(this);
     this.changeSelectedCategory = this.changeSelectedCategory.bind(this);
+    this.changePage = this.changePage.bind(this);
     this.getRandom = this.getRandom.bind(this);
   }
   
@@ -61,9 +30,13 @@ class App extends React.Component {
     this.setState({selectedCategory: category});
   }
   
+  changePage(newPage){
+    this.setState({currentPage: newPage});
+  }
+  
   getRandom(){
-    let num = Math.floor(Math.random() * this.state.colorList.length);
-    return this.state.colorList[num].hex;
+    let num = Math.floor(Math.random() * colorList.length);
+    return colorList[num].hex;
   }
   
   render() {  
@@ -73,13 +46,15 @@ class App extends React.Component {
           <Header/>
           <Sidebar colorSelect={this.changeSelectedColor}
           categorySelect={this.changeSelectedCategory} 
-          colorList={this.state.colorList}
+          colorList={colorList}
           getRandom={this.getRandom}/>
-          <Route path='/' render={(props)=><ColorList colorList={this.state.colorList}
+          <Route path='/' render={(props)=><ColorList colorList={colorList}
           currentRouterpath={props.location.pathname}
           selectedColor={this.state.selectedColor}
-          colorSelect={this.changeSelectedColor}/>} />
-          <Route path='/details' render={(props)=><ColorDetail colorList={this.state.colorList}
+          colorSelect={this.changeSelectedColor}
+          currentPage={this.state.currentPage}
+          changePage={this.changePage}/>} />
+          <Route path='/details' render={(props)=><ColorDetail colorList={colorList}
           currentRouterpath={props.location.pathname}
           selectedColor={props.selectedColor}
           colorSelect={this.changeSelectedColor}/>} />

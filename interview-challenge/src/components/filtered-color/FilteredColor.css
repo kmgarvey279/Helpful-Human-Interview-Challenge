@@ -4,7 +4,7 @@ div#filteredPalette {
   width: 130px;
   border: 2px solid lightgray;
   border-radius: 10px 10px 0 0;
-    break-inside: avoid-column;
+  break-inside: avoid-column;
 }
 
 div#filteredLabel {

@@ -5,3 +5,12 @@ div#wrap {
   break-inside: avoid-column;
   margin-top: 70px;
 }
+
+div#pages {
+  columns: 8 auto;
+  margin-bottom: 10px; 
+  margin-left: 200px;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}

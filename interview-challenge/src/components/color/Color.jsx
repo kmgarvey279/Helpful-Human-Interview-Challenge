@@ -4,7 +4,7 @@ import './Color.css'
 
 function Color(props) {
   return (
-    <div>
+    <div id="color">
       <div id='palette' style={{backgroundColor: props.hex}}
       onClick={() => {props.colorSelect(props.hex);}}>
       </div>
