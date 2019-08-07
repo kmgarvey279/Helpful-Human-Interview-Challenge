@@ -5,7 +5,7 @@ import './ColorDetail.css';
 import colorList from '../../masterColorList.jsx'
 
 function ColorDetail(props) {
-  const filteredColors = colorList.filter(color => color.category == props.selectedCategory || color.hex !== props.selectedColor).slice(0, 5);
+  const filteredColors = colorList.filter(color => color.category == props.selectedCategory && color.hex !== props.selectedColor).slice(0, 5);
   
   return (
     <div id="detailWrap">

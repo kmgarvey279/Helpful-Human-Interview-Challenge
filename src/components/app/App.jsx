@@ -2,7 +2,6 @@ import React from 'react';
 import ColorList from '../color-list/ColorList';
 import Header from '../header/Header';
 import Sidebar from '../sidebar/Sidebar';
-import ColorDetail from '../color-detail/ColorDetail';
 import './App.css';
 import { BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
 import colorList from '../../masterColorList.jsx'
