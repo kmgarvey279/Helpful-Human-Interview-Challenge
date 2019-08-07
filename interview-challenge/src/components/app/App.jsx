@@ -20,6 +20,7 @@ class App extends React.Component {
     this.changeSelectedCategory = this.changeSelectedCategory.bind(this);
     this.changePage = this.changePage.bind(this);
     this.getRandom = this.getRandom.bind(this);
+    this.getCategoryExample = this.getCategoryExample.bind(this);
   }
   
   changeSelectedColor(hex){
@@ -36,7 +37,13 @@ class App extends React.Component {
   
   getRandom(){
     let num = Math.floor(Math.random() * colorList.length);
-    return colorList[num].hex;
+    this.changeSelectedColor(colorList[num].hex);
+    this.changeSelectedCategory(colorList[num].category);
+  }
+  
+  getCategoryExample(category){
+    let firstExample = colorList.find(color => color.category == category);
+    this.changeSelectedColor(firstExample.hex);
   }
   
   render() {  
@@ -45,19 +52,18 @@ class App extends React.Component {
         <Router>
           <Header/>
           <Sidebar colorSelect={this.changeSelectedColor}
-          categorySelect={this.changeSelectedCategory} 
-          colorList={colorList}
-          getRandom={this.getRandom}/>
+            categorySelect={this.changeSelectedCategory} 
+            colorList={colorList}
+            getRandom={this.getRandom}
+            getCategoryExample={this.getCategoryExample}/>
           <Route path='/' render={(props)=><ColorList colorList={colorList}
-          currentRouterpath={props.location.pathname}
-          selectedColor={this.state.selectedColor}
-          colorSelect={this.changeSelectedColor}
-          currentPage={this.state.currentPage}
-          changePage={this.changePage}/>} />
-          <Route path='/details' render={(props)=><ColorDetail colorList={colorList}
-          currentRouterpath={props.location.pathname}
-          selectedColor={props.selectedColor}
-          colorSelect={this.changeSelectedColor}/>} />
+            currentRouterpath={props.location.pathname}
+            selectedColor={this.state.selectedColor}
+            selectedCategory={this.state.selectedCategory}
+            colorSelect={this.changeSelectedColor}
+            categorySelect={this.changeSelectedCategory}
+            currentPage={this.state.currentPage}
+            changePage={this.changePage}/>} />
         </Router>
       </div>
     );

@@ -13,7 +13,7 @@ const masterColorList = [
    },
    {
      category: 'green',
-     hex: '#F5FFFA',
+     hex: '#6B8E23',
    },
    {
      category: 'green',

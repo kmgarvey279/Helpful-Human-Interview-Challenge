@@ -6,7 +6,7 @@ function Color(props) {
   return (
     <div id="color">
       <div id='palette' style={{backgroundColor: props.hex}}
-      onClick={() => {props.colorSelect(props.hex);}}>
+      onClick={() => {props.colorSelect(props.hex); props.categorySelect(props.category);}}>
       </div>
       <div id="label"><p>{props.hex}</p></div>
     </div>
@@ -16,7 +16,8 @@ function Color(props) {
 Color.propTypes = {
   category: PropTypes.string.isRequired,
   hex: PropTypes.string.isRequired,
-  colorSelect: PropTypes.func.isRequired
+  colorSelect: PropTypes.func.isRequired,
+  categorySelect: PropTypes.func.isRequired
 }
 
 export default Color;

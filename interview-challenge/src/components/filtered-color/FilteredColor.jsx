@@ -4,9 +4,9 @@ import './FilteredColor.css'
 
 function FilteredColor(props) {
   return (
-    <div>
+    <div id="filteredColor">
       <div id='filteredPalette' style={{backgroundColor: props.hex}}
-      onClick={() => {props.colorSelect(props.hex);}}>
+      onClick={() => {props.colorSelect(props.hex); props.categorySelect(props.category)}}>
       </div>
       <div id="filteredLabel"><p>{props.hex}</p></div>
     </div>
@@ -16,7 +16,8 @@ function FilteredColor(props) {
 FilteredColor.propTypes = {
   category: PropTypes.string.isRequired,
   hex: PropTypes.string.isRequired,
-  colorSelect: PropTypes.func.isRequired
+  colorSelect: PropTypes.func.isRequired,
+  categorySelect: PropTypes.func.isRequired
 }
 
 export default FilteredColor;

@@ -7,10 +7,7 @@ div#wrap {
 }
 
 div#pages {
-  columns: 8 auto;
   margin-bottom: 10px; 
-  margin-left: 200px;
+  margin-left: 350px;
   width: 50%;
-  display: inline-block;
-  vertical-align: top;
 }

@@ -1,3 +1,14 @@
-div#pageNumber {
-  break-inside: avoid-column;
+div#pageNumbers {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+h4{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h4#selectedPage {
+  font-weight: bold;
+  text-decoration: underline;
 }

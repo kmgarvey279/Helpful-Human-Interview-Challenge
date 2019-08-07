@@ -8,6 +8,7 @@ import colorList from '../../masterColorList.jsx'
 
 function ColorList(props) {
   if (props.selectedColor == null) {
+    
     let pageArr = [];
     let totalPages = Math.ceil(colorList.length / 12);
     let start = 0;
@@ -18,10 +19,9 @@ function ColorList(props) {
       start = end
       end += 12;
     }
-    
     var pages = [];
     for (let i = 1; i < pageArr.length; i++){
-      pages.push(<PageSelect page={i} changePage={props.changePage} currentPage={props.currentPage}/>);
+      pages.push(<PageSelect pageNumber={i} changePage={props.changePage} currentPage={props.currentPage}/>);
     }
     
     return (
@@ -31,7 +31,8 @@ function ColorList(props) {
             <Color category={color.category}
             hex={color.hex}
             style={color.style}
-            colorSelect={props.colorSelect}/>
+            colorSelect={props.colorSelect}
+            categorySelect={props.categorySelect}/>
           )}
         </div>
         <div id="pages">
@@ -43,17 +44,19 @@ function ColorList(props) {
     return (
       <div>
         <ColorDetail selectedColor={props.selectedColor} 
-        colorList={props.colorList}
-        currentPage={props.currentPage}
-        pages={props.pages}/>
+        selectedCategory={props.selectedCategory}
+        colorSelect={props.colorSelect}
+        categorySelect={props.categorySelect}/>
       </div>
     )
   }
 }
 
 ColorList.propTypes = {
-  colorSelect: PropTypes.func,
+  colorSelect: PropTypes.func.isRequired,
+  categorySelect: PropTypes.func.isRequired,
   selectedColor: PropTypes.string,
+  selectedCategory: PropTypes.string,
   currentPage: PropTypes.number,
   changePage: PropTypes.func
 };
