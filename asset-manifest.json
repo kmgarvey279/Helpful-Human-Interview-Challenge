@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.26951b97.chunk.css",
-    "main.js": "/static/js/main.31b14a6c.chunk.js",
-    "main.js.map": "/static/js/main.31b14a6c.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.5fca4cbf.chunk.js": "/static/js/2.5fca4cbf.chunk.js",
-    "static/js/2.5fca4cbf.chunk.js.map": "/static/js/2.5fca4cbf.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.7925623ec44fe2889b302b74f049f897.js": "/precache-manifest.7925623ec44fe2889b302b74f049f897.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.26951b97.chunk.css.map": "/static/css/main.26951b97.chunk.css.map",
-    "static/media/logo-symbol.svg": "/static/media/logo-symbol.629f0661.svg"
+    "main.css": "/interview-challenge/static/css/main.26951b97.chunk.css",
+    "main.js": "/interview-challenge/static/js/main.47599ccd.chunk.js",
+    "main.js.map": "/interview-challenge/static/js/main.47599ccd.chunk.js.map",
+    "runtime~main.js": "/interview-challenge/static/js/runtime~main.a88e0b6c.js",
+    "runtime~main.js.map": "/interview-challenge/static/js/runtime~main.a88e0b6c.js.map",
+    "static/js/2.5fca4cbf.chunk.js": "/interview-challenge/static/js/2.5fca4cbf.chunk.js",
+    "static/js/2.5fca4cbf.chunk.js.map": "/interview-challenge/static/js/2.5fca4cbf.chunk.js.map",
+    "index.html": "/interview-challenge/index.html",
+    "precache-manifest.3bb298a3628e9fbd8e48f2b53746a56d.js": "/interview-challenge/precache-manifest.3bb298a3628e9fbd8e48f2b53746a56d.js",
+    "service-worker.js": "/interview-challenge/service-worker.js",
+    "static/css/main.26951b97.chunk.css.map": "/interview-challenge/static/css/main.26951b97.chunk.css.map",
+    "static/media/logo-symbol.svg": "/interview-challenge/static/media/logo-symbol.629f0661.svg"
   }
 }
